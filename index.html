@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Peti Harta Karun</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('dana kaget.png') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .chest {
+      width: 150px;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .chest:active {
+      transform: scale(1.1) rotate(2deg);
+    }
+    .input-group {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 15px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px;
+      width: 80%;
+      background-color: #003366;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #002244;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" loop>
+    <source src="circus-fun-energy-clown-233408.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="chest-sound">
+    <source src="wood-surface-multi-coin-payout-6-215276.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>AP STORE MEDIA</h1>
+    <img src="https://cdn.pixabay.com/photo/2016/03/31/17/33/chest-1293748_1280.png" alt="Peti Harta Karun" class="chest" id="chest" />
+    <div class="input-group">
+      <input type="text" id="username" placeholder="Masukkan kata kunci" />
+      <button onclick="checkUsername()">CLAIM</button>
+    </div>
+  </div>
+
+  <script>
+    const chest = document.getElementById('chest');
+    const chestSound = document.getElementById('chest-sound');
+    const bgMusic = document.getElementById('bg-music');
+
+    chest.addEventListener('click', () => {
+      chestSound.currentTime = 0;
+      chestSound.play();
+    });
+
+    function checkUsername() {
+      const username = document.getElementById('username').value.trim();
+      if (username === 'APQAIIH') {
+        window.location.href = 'https://link.dana.id/danakaget?c=sugnfd9ev&r=ia9y6T&orderId=20250415101214545715010300166614917794828';
+      } else {
+        window.location.href = 'https://www.profitableratecpm.com/hnxqji8b?key=0ca41579cbc69bbcdc36ec07bf0f53fa';
+      }
+    }
+
+    // Try to autoplay music when user interacts (due to browser policies)
+    window.addEventListener('load', () => {
+      const playMusic = () => {
+        bgMusic.play().catch(() => {});
+        document.body.removeEventListener('click', playMusic);
+      };
+      document.body.addEventListener('click', playMusic);
+    });
+  </script>
+</body>
+</html>
